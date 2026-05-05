@@ -4,6 +4,9 @@ Plugin Name: Adding Recaptcha to Forms
 Description: A plugin to add Recaptcha to the Login Page in WordPress
 Version: 1.0
 */
+if(!defined('ABSPATH')){
+    exit;
+}
 
 if (!defined('MY_SECRET_KEY')) {
     define('MY_SECRET_KEY', 'my-super-secret-32-byte-key-value'); 
@@ -67,7 +70,7 @@ if (class_exists('InitializeRecaptcha')) {
     
 }
 
-// ✅ Start Form Handling
+
 if (class_exists('HandleForm')) {
     new HandleForm();
 }
